@@ -1,0 +1,15 @@
+study("Bull Count")
+barup = (close > open[1] )
+bardown = close < low [1]
+plot(series=barssince(barup)*0, title="Consecutive Bars Down", color=red, style=histogram, linewidth=2)
+plot(series=barssince(bardown), title="Consecutive Bars Up" , color=green, style=histogram, linewidth=2)
+ob = input(20,title="Over Bought")
+hline(ob)
+
+study("Bear Count")
+barup = (close > high[1] )
+bardown = close < open[1]
+plot(series=barssince(barup), title="Consecutive Bars Down", color=red, style=histogram, linewidth=2)
+plot(series=barssince(bardown)*0, title="Consecutive Bars Up" , color=green, style=histogram, linewidth=2)
+ob = input(7,title="Over Bought")
+hline(ob)
